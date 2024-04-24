@@ -29,7 +29,7 @@ public class BankStub {
 
 	private volatile String name;
 
-	private float baseRate = 6.0f;
+	private float baseRate = 6.0F;
 
 	public void setName(String name) {
 		this.name = name;

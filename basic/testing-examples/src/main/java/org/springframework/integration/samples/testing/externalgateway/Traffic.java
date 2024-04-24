@@ -25,7 +25,7 @@ import java.util.Map;
  */
 public class Traffic {
 
-	private final Map<String, String> incidents = new HashMap<String, String>();
+	private final Map<String, String> incidents = new HashMap<>();
 
 	public void addIncident(String title, String description){
 		incidents.put(title, description);

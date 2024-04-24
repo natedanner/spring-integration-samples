@@ -56,8 +56,7 @@ public final class TravelUtils {
 		StreamResult streamResult = new StreamResult(new StringWriter());
 		Source source = new StringSource(result);
 		transformer.transform(source, streamResult);
-		String xmlString = streamResult.getWriter().toString();
-		return xmlString;
+		return streamResult.getWriter().toString();
 	}
 
 }

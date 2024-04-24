@@ -40,10 +40,9 @@ public class SystemService {
 
 		LOGGER.info(String.format("Calling method 'findUser' with parameter %s", user));
 
-		final User fullUser = new User(user.getUsername(),
+		return new User(user.getUsername(),
 									   "secret",
 									   user.getUsername() + "@springintegration.org");
-		return fullUser;
 	}
 
 	public User findUserByUsername(String username) {

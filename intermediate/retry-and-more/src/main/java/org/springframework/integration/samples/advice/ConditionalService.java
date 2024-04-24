@@ -35,7 +35,7 @@ public class ConditionalService {
 
 	private final Log logger = LogFactory.getLog(this.getClass());
 
-	private final Map<String, AtomicInteger> failCount = new HashMap<String, AtomicInteger>();
+	private final Map<String, AtomicInteger> failCount = new HashMap<>();
 
 	/**
 	 * If this service receives a payload 'failnnn' where nnn is the number of failures,

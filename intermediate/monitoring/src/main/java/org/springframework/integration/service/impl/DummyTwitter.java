@@ -31,7 +31,7 @@ public class DummyTwitter {
 
 	@SuppressWarnings("deprecation")
 	public Tweet getTweet() {
-		Tweet tweet = new Tweet(++this.id, "" + this.id,
+		return new Tweet(++this.id, "" + this.id,
 				"Spring Integration is the coolest Enterprise Integration project",
 				new Date(),
 				"SomeUser",
@@ -40,7 +40,6 @@ public class DummyTwitter {
 				0L,
 				null,
 				null);
-		return tweet;
 
 	}
 }

@@ -127,7 +127,7 @@ public class LoanShark {
 		return merged;
 	}
 
-	public static final EntityManager entityManager() {
+	public static EntityManager entityManager() {
 		EntityManager em = new LoanShark().entityManager;
 		if (em == null) {
 			throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
@@ -145,7 +145,9 @@ public class LoanShark {
 	}
 
 	public static LoanShark findLoanShark(Long id) {
-		if (id == null) return null;
+		if (id == null) {
+			return null;
+		}
 		return entityManager().find(LoanShark.class, id);
 	}
 

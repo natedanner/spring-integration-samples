@@ -63,7 +63,7 @@ public class DefaultTwitterService implements TwitterService {
 	 */
 	public DefaultTwitterService() {
 
-		twitterMessages = new LinkedHashMap<Long, TwitterMessage>( 10, 0.75f, true ) {
+		twitterMessages = new LinkedHashMap<>( 10, 0.75f, true ) {
 
 			private static final long serialVersionUID = 1L;
 

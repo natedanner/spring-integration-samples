@@ -38,7 +38,7 @@ import org.springframework.integration.mqtt.core.DefaultMqttPahoClientFactory;
  * @since 5.2
  *
  */
-public class BrokerRunning extends TestWatcher {
+public final class BrokerRunning extends TestWatcher {
 
 	private static final Log logger = LogFactory.getLog(BrokerRunning.class);
 

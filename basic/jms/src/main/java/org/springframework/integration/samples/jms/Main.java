@@ -35,19 +35,19 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Main {
 
-	private final static String[] configFilesGatewayDemo = {
+	private static final String[] configFilesGatewayDemo = {
 		"/META-INF/spring/integration/common.xml",
 		"/META-INF/spring/integration/inboundGateway.xml",
 		"/META-INF/spring/integration/outboundGateway.xml"
 	};
 
-	private final static String[] configFilesChannelAdapterDemo = {
+	private static final String[] configFilesChannelAdapterDemo = {
 		"/META-INF/spring/integration/common.xml",
 		"/META-INF/spring/integration/inboundChannelAdapter.xml",
 		"/META-INF/spring/integration/outboundChannelAdapter.xml"
 	};
 
-	private final static String[] configFilesAggregationDemo = {
+	private static final String[] configFilesAggregationDemo = {
 		"/META-INF/spring/integration/common.xml",
 		"/META-INF/spring/integration/aggregation.xml"
 	};

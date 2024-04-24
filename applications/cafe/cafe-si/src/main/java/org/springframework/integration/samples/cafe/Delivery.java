@@ -38,7 +38,7 @@ public class Delivery implements Serializable{
 	public Delivery() {}
 
 	public Delivery(List<Drink> deliveredDrinks) {
-		assert(deliveredDrinks.size() > 0);
+		assert(!deliveredDrinks.isEmpty());
 		this.deliveredDrinks = deliveredDrinks;
 		this.orderNumber = deliveredDrinks.get(0).getOrderNumber();
 	}

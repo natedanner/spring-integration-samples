@@ -53,7 +53,7 @@ public class EmployeeList {
 	 */
 	public List<Employee> getEmployee() {
 		if (employee == null){
-			employee = new ArrayList<Employee>();
+			employee = new ArrayList<>();
 		}
 		return employee;
 	}

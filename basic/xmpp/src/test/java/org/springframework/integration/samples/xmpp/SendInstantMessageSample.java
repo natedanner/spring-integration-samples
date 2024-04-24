@@ -34,7 +34,7 @@ public class SendInstantMessageSample {
 		ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/spring/integration/SendInstantMessageSample-context.xml");
 		
 		MessageChannel toUserChannel = context.getBean("toUserChannel", MessageChannel.class);
-		Message<String> message = new GenericMessage<String>("Hello from Spring Integration XMPP");
+		Message<String> message = new GenericMessage<>("Hello from Spring Integration XMPP");
 		toUserChannel.send(message);
 	}
 }

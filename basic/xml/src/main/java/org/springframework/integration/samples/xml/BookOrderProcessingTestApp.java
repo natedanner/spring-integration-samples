@@ -70,7 +70,7 @@ public class BookOrderProcessingTestApp {
 		DocumentBuilder builder = builderFactory.newDocumentBuilder();
 
 		Document orderDoc = builder.parse(orderRes.getInputStream());
-		return new GenericMessage<Document>(orderDoc);
+		return new GenericMessage<>(orderDoc);
 	}
 
 }

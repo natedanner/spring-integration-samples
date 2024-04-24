@@ -52,21 +52,21 @@ public class EmployeeSearchService {
 	public Message<EmployeeList> getEmployee(Message<?> inMessage){
 
 		EmployeeList employeeList = new EmployeeList();
-		Map<String, Object> responseHeaderMap = new HashMap<String, Object>();
+		Map<String, Object> responseHeaderMap = new HashMap<>();
 
 		try{
 			MessageHeaders headers = inMessage.getHeaders();
 			String id = (String)headers.get("employeeId");
 			boolean isFound;
-			if (id.equals("1")) {
+			if ("1".equals(id)) {
 				employeeList.getEmployee().add(new Employee(1, "John", "Doe"));
 				isFound = true;
 			}
-			else if (id.equals("2")) {
+			else if ("2".equals(id)) {
 				employeeList.getEmployee().add(new Employee(2, "Jane", "Doe"));
 				isFound = true;
 			}
-			else if (id.equals("0")) {
+			else if ("0".equals(id)) {
 				employeeList.getEmployee().add(new Employee(1, "John", "Doe"));
 				employeeList.getEmployee().add(new Employee(2, "Jane", "Doe"));
 				isFound = true;
@@ -86,8 +86,7 @@ public class EmployeeSearchService {
 			setReturnStatusAndMessage("1", "System Error", employeeList, responseHeaderMap);
 			logger.error("System error occurred :" + e);
 		}
-		Message<EmployeeList> message = new GenericMessage<EmployeeList>(employeeList, responseHeaderMap);
-		return message;
+		return new GenericMessage<>(employeeList, responseHeaderMap);
 	}
 
 	/**

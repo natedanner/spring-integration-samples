@@ -33,7 +33,7 @@ public class Counter {
 
 	public int next() {
 		int nextNumber = count.incrementAndGet();
-		return (nextNumber % 5 == 0) ? -nextNumber : nextNumber;
+		return nextNumber % 5 == 0 ? -nextNumber : nextNumber;
 	}
 
 }

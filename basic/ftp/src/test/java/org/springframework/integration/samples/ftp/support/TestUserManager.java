@@ -80,7 +80,7 @@ public class TestUserManager extends AbstractUserManager {
 	}
 
 	public boolean doesExist(String username) throws FtpException {
-		return (TEST_USERNAME.equals(username) || anonUser.getName().equals(username)) ? true : false;
+		return TEST_USERNAME.equals(username) || anonUser.getName().equals(username) ? true : false;
 	}
 
 	public User authenticate(Authentication authentication) throws AuthenticationFailedException {

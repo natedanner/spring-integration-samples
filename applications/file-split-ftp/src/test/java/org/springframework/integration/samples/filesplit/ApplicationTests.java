@@ -194,8 +194,7 @@ public class ApplicationTests {
 		mailServer.waitForIncomingEmail(10000, 1);
 		MimeMessage[] mail = mailServer.getReceivedMessagesForDomain("baz");
 		assertThat(mail).hasSize(1);
-		MimeMessage message = mail[0];
-		return message;
+		return mail[0];
 	}
 
 	/**

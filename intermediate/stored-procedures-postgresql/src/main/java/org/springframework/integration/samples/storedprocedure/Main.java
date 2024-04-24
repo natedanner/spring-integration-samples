@@ -35,7 +35,7 @@ import org.springframework.integration.service.CoffeeService;
  * @since 2.2
  *
  */
-public class Main {
+public final class Main {
 
 	private static final Log LOGGER = LogFactory.getLog(Main.class);
 

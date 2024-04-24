@@ -39,7 +39,7 @@ public class MultipartClientForHttpOutboundClient {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
 				"/META-INF/spring/integration/http-outbound-config.xml");
 		Resource s2logo = new ClassPathResource(RESOURCE_PATH);
-		Map<String, Object> multipartMap = new HashMap<String, Object>();
+		Map<String, Object> multipartMap = new HashMap<>();
 		multipartMap.put("company", new String[]{"SpringSource", "VMWare"});
 		multipartMap.put("company-logo", s2logo);
 		logger.info("Created multipart request: " + multipartMap);

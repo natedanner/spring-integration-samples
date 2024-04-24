@@ -20,6 +20,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Objects;
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
@@ -80,7 +81,7 @@ public class MonoGatewayTests {
 			final int number = numbers[i];
 			gateway.multiplyByTwo(number)
 					.subscribeOn(Schedulers.boundedElastic())
-					.filter(p -> p != null)
+					.filter(Objects::nonNull)
 					.doOnNext(result1 -> {
 						logger.info("Result of multiplication of " + number + " by 2 is " + result1);
 						latch.countDown();

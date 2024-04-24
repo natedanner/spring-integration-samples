@@ -34,7 +34,7 @@ public class AckAggregator implements MessageGroupProcessor {
 			if (builder.length() > 8) {
 				builder.append(", ");
 			}
-			builder.append(message.getPayload() + ": ack=" + message.getHeaders().get(AmqpHeaders.PUBLISH_CONFIRM));
+			builder.append(message.getPayload()).append(": ack=").append(message.getHeaders().get(AmqpHeaders.PUBLISH_CONFIRM));
 		}
 		return builder.toString();
 	}

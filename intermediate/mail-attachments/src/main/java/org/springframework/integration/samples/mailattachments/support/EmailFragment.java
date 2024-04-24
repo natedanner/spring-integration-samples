@@ -86,9 +86,9 @@ public class EmailFragment {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result
-				+ ((directory == null) ? 0 : directory.hashCode());
+				+ (directory == null ? 0 : directory.hashCode());
 		result = prime * result
-				+ ((filename == null) ? 0 : filename.hashCode());
+				+ (filename == null ? 0 : filename.hashCode());
 		return result;
 	}
 

@@ -45,7 +45,7 @@ public class DynamicFtpChannelResolver {
 	public static final int MAX_CACHE_SIZE = 2;
 
 	private final LinkedHashMap<String, MessageChannel> channels =
-				new LinkedHashMap<String, MessageChannel>() {
+				new LinkedHashMap<>() {
 					
 					private static final long serialVersionUID = 1L;
 
@@ -69,7 +69,7 @@ public class DynamicFtpChannelResolver {
 				};
 
 	private final Map<MessageChannel, ConfigurableApplicationContext> contexts =
-				new HashMap<MessageChannel, ConfigurableApplicationContext>();
+				new HashMap<>();
 
 
 

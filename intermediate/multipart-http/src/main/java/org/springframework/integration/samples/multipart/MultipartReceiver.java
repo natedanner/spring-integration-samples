@@ -34,13 +34,13 @@ public class MultipartReceiver {
 	public void receive(LinkedMultiValueMap<String, Object> multipartRequest){
 		logger.info("Successfully received multipart request: " + multipartRequest);
 		for (String elementName : multipartRequest.keySet()) {
-			if (elementName.equals("company")){
+			if ("company".equals(elementName)){
 				LinkedList value =  (LinkedList)multipartRequest.get("company");
 				String[] multiValues = (String[]) value.get(0);
 				for (String companyName : multiValues) {
 					logger.info(elementName + " - " + companyName);
 				}
-			} else if (elementName.equals("company-logo")){
+			} else if ("company-logo".equals(elementName)){
 				logger.info(elementName + " - as UploadedMultipartFile: "
 						+ ((UploadedMultipartFile) multipartRequest.getFirst("company-logo")).getOriginalFilename());
 			}

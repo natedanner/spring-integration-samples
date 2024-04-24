@@ -35,7 +35,7 @@ public class TwitterSendUpdatesSample {
 			new ClassPathXmlApplicationContext("META-INF/spring/integration/TwitterSendUpdates-context.xml");
 		
 		MessageChannel twitterOutChannel = context.getBean("twitterOut", MessageChannel.class);
-		Message<String> twitterUpdate = new GenericMessage<String>("Testing new Twitter samples for #springintegration");
+		Message<String> twitterUpdate = new GenericMessage<>("Testing new Twitter samples for #springintegration");
 		twitterOutChannel.send(twitterUpdate);
 	}
 }

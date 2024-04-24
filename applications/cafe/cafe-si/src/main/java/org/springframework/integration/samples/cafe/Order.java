@@ -30,7 +30,7 @@ public class Order implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
-	private List<OrderItem> orderItems = new ArrayList<OrderItem>();
+	private List<OrderItem> orderItems = new ArrayList<>();
 
 	/** the order number used for tracking */
 	private int number;

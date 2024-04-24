@@ -37,16 +37,16 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
  *
  */
 public class AsyncGatewayTest {
-	private static Log logger = LogFactory.getLog(AsyncGatewayTest.class);
-	private static ExecutorService executor = Executors.newFixedThreadPool(100);
-	private static int timeout = 20;
+	private static final Log logger = LogFactory.getLog(AsyncGatewayTest.class);
+	private static final ExecutorService executor = Executors.newFixedThreadPool(100);
+	private static final int timeout = 20;
 
 	@Test
 	public void testAsyncGateway() throws Exception{
 		ConfigurableApplicationContext ac =
 				new FileSystemXmlApplicationContext("src/main/resources/META-INF/spring/integration/*.xml");
 		MathServiceGateway mathService = ac.getBean("mathService", MathServiceGateway.class);
-		Map<Integer, Future<Integer>> results = new HashMap<Integer, Future<Integer>>();
+		Map<Integer, Future<Integer>> results = new HashMap<>();
 		Random random = new Random();
 		for (int i = 0; i < 100; i++) {
 			int number = random.nextInt(200);

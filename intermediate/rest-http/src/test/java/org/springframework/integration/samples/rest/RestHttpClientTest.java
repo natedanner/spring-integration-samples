@@ -129,7 +129,7 @@ public class RestHttpClientTest {
 	}
 
 	private HttpHeaders getHttpHeadersWithUserCredentials(ClientHttpRequest request) {
-		return (getHttpHeadersWithUserCredentials(request.getHeaders()));
+		return getHttpHeadersWithUserCredentials(request.getHeaders());
 	}
 
 	private HttpHeaders getHttpHeadersWithUserCredentials(HttpHeaders headers) {

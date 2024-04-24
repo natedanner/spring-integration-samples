@@ -43,7 +43,7 @@ public class LoanQuoteAggregator {
 	public Object aggregateQuotes(List<LoanQuote> quotes,
 			@Header(value="RESPONSE_TYPE", required=false) String responseType) {
 		Collections.sort(quotes);
-		return ("BEST".equals(responseType)) ? quotes.get(0) : quotes;
+		return "BEST".equals(responseType) ? quotes.get(0) : quotes;
 	}
 
 }

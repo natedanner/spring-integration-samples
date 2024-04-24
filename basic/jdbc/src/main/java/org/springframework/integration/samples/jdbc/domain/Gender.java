@@ -44,7 +44,7 @@ public enum Gender {
 	}
 
 	static {
-		map = new HashMap<String, Gender>();
+		map = new HashMap<>();
 		for(Gender gender:EnumSet.allOf(Gender.class)) {
 			map.put(gender.getIdentifier(), gender);
 		}

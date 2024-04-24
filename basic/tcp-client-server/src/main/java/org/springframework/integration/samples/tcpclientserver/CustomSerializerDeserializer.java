@@ -108,8 +108,7 @@ public class CustomSerializerDeserializer implements Serializer<CustomOrder>, De
 		String lengthString = parseString(inputStream, MESSAGE_LENGTH_LENGTH);
 		int lengthOfMessage = Integer.valueOf(lengthString);
 
-		String message = parseString(inputStream, lengthOfMessage);
-		return message;
+		return parseString(inputStream, lengthOfMessage);
 	}
 
 	private String parseString(InputStream inputStream, int length) throws IOException {
@@ -131,7 +130,7 @@ public class CustomSerializerDeserializer implements Serializer<CustomOrder>, De
 
 	private int parseOrderNumber(InputStream inputStream) throws IOException {
 		String value = parseString(inputStream, ORDER_NUMBER_LENGTH);
-		return Integer.valueOf(value.toString());
+		return Integer.valueOf(value);
 	}
 
 	/**

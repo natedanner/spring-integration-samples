@@ -32,7 +32,7 @@ import org.springframework.messaging.support.GenericMessage;
  */
 public class ControlBusDemoTest {
 
-	private static Log logger = LogFactory.getLog(ControlBusDemoTest.class);
+	private static final Log logger = LogFactory.getLog(ControlBusDemoTest.class);
 
 	@Test
 	public void demoControlBus(){

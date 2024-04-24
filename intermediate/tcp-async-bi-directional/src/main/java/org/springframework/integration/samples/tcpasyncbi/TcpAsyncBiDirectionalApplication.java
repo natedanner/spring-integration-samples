@@ -134,7 +134,7 @@ class ServerPeer {
 
 	@EventListener
 	public void open(TcpConnectionOpenEvent event) {
-		if (event.getConnectionFactoryName().equals("server")) {
+		if ("server".equals(event.getConnectionFactoryName())) {
 			this.clients.add(event.getConnectionId());
 		}
 	}

@@ -30,7 +30,7 @@ public class Delivery {
 	private final int orderNumber;
 
 	public Delivery(List<Drink> deliveredDrinks) {
-		assert(deliveredDrinks.size() > 0);
+		assert(!deliveredDrinks.isEmpty());
         this.deliveredDrinks = deliveredDrinks;
 		this.orderNumber = deliveredDrinks.get(0).getOrderNumber();
     }

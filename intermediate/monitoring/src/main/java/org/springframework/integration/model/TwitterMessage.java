@@ -79,44 +79,55 @@ public class TwitterMessage {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result
-				+ ((createdAt == null) ? 0 : createdAt.hashCode());
+				+ (createdAt == null ? 0 : createdAt.hashCode());
 		result = prime * result
-				+ ((fromUser == null) ? 0 : fromUser.hashCode());
+				+ (fromUser == null ? 0 : fromUser.hashCode());
 		result = prime * result
-				+ ((profileImageUrl == null) ? 0 : profileImageUrl.hashCode());
-		result = prime * result + ((text == null) ? 0 : text.hashCode());
+				+ (profileImageUrl == null ? 0 : profileImageUrl.hashCode());
+		result = prime * result + (text == null ? 0 : text.hashCode());
 		return result;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()) {
 			return false;
+		}
 		TwitterMessage other = (TwitterMessage) obj;
 		if (createdAt == null) {
-			if (other.createdAt != null)
+			if (other.createdAt != null) {
 				return false;
-		} else if (!createdAt.equals(other.createdAt))
+			}
+		} else if (!createdAt.equals(other.createdAt)) {
 			return false;
+		}
 		if (fromUser == null) {
-			if (other.fromUser != null)
+			if (other.fromUser != null) {
 				return false;
-		} else if (!fromUser.equals(other.fromUser))
+			}
+		} else if (!fromUser.equals(other.fromUser)) {
 			return false;
+		}
 		if (profileImageUrl == null) {
-			if (other.profileImageUrl != null)
+			if (other.profileImageUrl != null) {
 				return false;
-		} else if (!profileImageUrl.equals(other.profileImageUrl))
+			}
+		} else if (!profileImageUrl.equals(other.profileImageUrl)) {
 			return false;
+		}
 		if (text == null) {
-			if (other.text != null)
+			if (other.text != null) {
 				return false;
-		} else if (!text.equals(other.text))
+			}
+		} else if (!text.equals(other.text)) {
 			return false;
+		}
 		return true;
 	}
 

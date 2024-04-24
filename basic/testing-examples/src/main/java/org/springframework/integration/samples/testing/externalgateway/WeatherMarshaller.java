@@ -47,7 +47,7 @@ public class WeatherMarshaller implements Marshaller, Unmarshaller, Initializing
 
 	private static final TransformerFactory transformerFactory = TransformerFactory.newInstance();
 
-	private final Map<String, String> namespacePrefixes = new HashMap<String, String>();
+	private final Map<String, String> namespacePrefixes = new HashMap<>();
 
 	private static final String XPATH_PREFIX = "/p:GetCityWeatherByZIPResponse/p:GetCityWeatherByZIPResult/";
 
@@ -96,7 +96,7 @@ public class WeatherMarshaller implements Marshaller, Unmarshaller, Initializing
 		}
 	}
 
-	public static final void writeXml(Document document) {
+	public static void writeXml(Document document) {
 		Transformer transformer = createIndentingTransformer();
 
 		transformer.setOutputProperty(OutputKeys.METHOD, "xml");
@@ -108,7 +108,7 @@ public class WeatherMarshaller implements Marshaller, Unmarshaller, Initializing
 			throw new IllegalStateException(ex);
 		}
 	}
-	public static final Transformer createIndentingTransformer() {
+	public static Transformer createIndentingTransformer() {
 		Transformer xformer;
 		try {
 			xformer = transformerFactory.newTransformer();

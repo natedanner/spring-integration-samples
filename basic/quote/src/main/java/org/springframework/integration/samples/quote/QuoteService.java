@@ -32,7 +32,7 @@ public class QuoteService {
 
 	@ServiceActivator(inputChannel="tickers", outputChannel="quotes")
 	public Quote lookupQuote(String ticker) {
-		BigDecimal price = new BigDecimal(new Random().nextDouble() * 100);//NOSONAR
+		BigDecimal price = BigDecimal.valueOf(new Random().nextDouble() * 100);//NOSONAR
 		return new Quote(ticker, price.setScale(2, RoundingMode.HALF_EVEN));
 	}
 

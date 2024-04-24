@@ -30,7 +30,7 @@ import org.springframework.integration.support.MessageBuilder;
  */
 public class ChannelAdapterDemoTest extends ActiveMQMultiContextTests {
 
-	private final static String[] configFilesChannelAdapterDemo = {
+	private static final String[] configFilesChannelAdapterDemo = {
 		"/META-INF/spring/integration/common.xml",
 		"/META-INF/spring/integration/inboundChannelAdapter.xml",
 		"/META-INF/spring/integration/outboundChannelAdapter.xml"

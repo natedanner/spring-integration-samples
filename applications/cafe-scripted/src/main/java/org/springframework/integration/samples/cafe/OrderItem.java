@@ -22,11 +22,11 @@ package org.springframework.integration.samples.cafe;
  */
 public class OrderItem {
 
-    private DrinkType type;
+	private final DrinkType type;
 
     private int shots = 1;
 
-    private boolean iced = false;
+	private final boolean iced;
 
 	private final Order order;
 
@@ -56,7 +56,7 @@ public class OrderItem {
     }
 
     public String toString() {
-        return ((this.iced) ? "iced " : "hot ") + " order:"  + this.order.getNumber() + " " +this.shots + " shot " + this.type;
+        return (this.iced ? "iced " : "hot ") + " order:"  + this.order.getNumber() + " " +this.shots + " shot " + this.type;
     }
 
 }

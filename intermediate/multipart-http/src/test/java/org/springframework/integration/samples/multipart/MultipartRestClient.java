@@ -45,13 +45,13 @@ public class MultipartRestClient {
 	public static void main(String[] args) throws Exception{
 		RestTemplate template = new RestTemplate();
 		Resource s2logo = new ClassPathResource(RESOURCE_PATH);
-		MultiValueMap<String, Object> multipartMap = new LinkedMultiValueMap<String, Object>();
+		MultiValueMap<String, Object> multipartMap = new LinkedMultiValueMap<>();
 		multipartMap.add("company", "SpringSource");
 		multipartMap.add("company-logo", s2logo);
 		logger.info("Created multipart request: " + multipartMap);
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(new MediaType("multipart", "form-data"));
-		HttpEntity<Object> request = new HttpEntity<Object>(multipartMap, headers);
+		HttpEntity<Object> request = new HttpEntity<>(multipartMap, headers);
 		logger.info("Posting request to: " + URI);
 		ResponseEntity<?> httpResponse = template.exchange(URI, HttpMethod.POST, request, Object.class);
 		if (!httpResponse.getStatusCode().equals(HttpStatus.OK)){

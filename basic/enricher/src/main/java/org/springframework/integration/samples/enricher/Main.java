@@ -110,7 +110,7 @@ public final class Main {
 
 			} else if ("3".equals(input)) {
 
-				final Map<String, Object> userData = new HashMap<String, Object>();
+				final Map<String, Object> userData = new HashMap<>();
 				userData.put("username", "foo_map");
 
 				final Map<String, Object> enrichedUserData = service.findUserWithUsernameInMap(userData);
@@ -135,7 +135,7 @@ public final class Main {
 	private static void printUserInformation(User user) {
 
 		if (user != null) {
-			LOGGER.info(String.format("\n\n    User found - Username: '%s',  Email: '%s', Password: '%s'.\n\n",
+			LOGGER.info(String.format("%n%n    User found - Username: '%s',  Email: '%s', Password: '%s'.%n%n",
 					user.getUsername(), user.getEmail(), user.getPassword()));
 
 		} else {

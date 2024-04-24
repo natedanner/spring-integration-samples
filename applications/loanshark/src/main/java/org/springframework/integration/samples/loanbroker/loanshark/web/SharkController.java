@@ -67,7 +67,7 @@ public class SharkController {
 			int sizeNo = size == null ? 10 : size.intValue();
 			model.addAttribute("loansharks", LoanShark.findLoanSharkEntries(page == null ? 0 : (page.intValue() - 1) * sizeNo, sizeNo));
 			float nrOfPages = (float) LoanShark.countLoanSharks() / sizeNo;
-			model.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
+			model.addAttribute("maxPages", (int) (nrOfPages > (int) nrOfPages || nrOfPages == 0.0 ? nrOfPages + 1 : nrOfPages));
 		} else {
 			model.addAttribute("loansharks", LoanShark.findAllLoanSharks());
 		}
@@ -93,9 +93,9 @@ public class SharkController {
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public String delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model model) {
 		LoanShark.findLoanShark(id).remove();
-		model.addAttribute("page", (page == null) ? "1" : page.toString());
-		model.addAttribute("size", (size == null) ? "10" : size.toString());
-		return "redirect:/loansharks?page=" + ((page == null) ? "1" : page.toString()) + "&size=" + ((size == null) ? "10" : size.toString());
+		model.addAttribute("page", page == null ? "1" : page.toString());
+		model.addAttribute("size", size == null ? "10" : size.toString());
+		return "redirect:/loansharks?page=" + (page == null ? "1" : page.toString()) + "&size=" + (size == null ? "10" : size.toString());
 	}
 
 	@RequestMapping(params = { "find=ByName", "form" }, method = RequestMethod.GET)
@@ -110,9 +110,9 @@ public class SharkController {
 	}
 
 	Converter<LoanShark, String> getLoanSharkConverter() {
-		return new Converter<LoanShark, String>() {
+		return new Converter<>() {
 			public String convert(LoanShark loanShark) {
-				return new StringBuilder().append(loanShark.getName()).append(" ").append(loanShark.getCounter()).append(" ").append(loanShark.getAverageRate()).toString();
+				return loanShark.getName() + " " + loanShark.getCounter() + " " + loanShark.getAverageRate();
 			}
 		};
 	}
@@ -134,7 +134,7 @@ public class SharkController {
 	@RequestMapping(method = RequestMethod.POST, headers = "Accept=application/json")
 	public ResponseEntity<String> createFromJson(@RequestBody String json) {
 		LoanShark.fromJsonToLoanShark(json).persist();
-		return new ResponseEntity<String>("LoanShark created", HttpStatus.CREATED);
+		return new ResponseEntity<>("LoanShark created", HttpStatus.CREATED);
 	}
 
 	@RequestMapping(headers = "Accept=application/json")
@@ -148,6 +148,6 @@ public class SharkController {
 		for (LoanShark loanshark: LoanShark.fromJsonArrayToLoanSharks(json)) {
 			loanshark.persist();
 		}
-		return new ResponseEntity<String>("LoanShark created", HttpStatus.CREATED);
+		return new ResponseEntity<>("LoanShark created", HttpStatus.CREATED);
 	}
 }

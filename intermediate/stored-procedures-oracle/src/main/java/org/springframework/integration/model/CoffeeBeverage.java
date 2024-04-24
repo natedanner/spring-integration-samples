@@ -74,9 +74,9 @@ public class CoffeeBeverage {
 		int result = 1;
 		result = prime
 				* result
-				+ ((this.description == null) ? 0 : this.description.hashCode());
+				+ (this.description == null ? 0 : this.description.hashCode());
 		result = prime * result
-				+ ((this.name == null) ? 0 : this.name.hashCode());
+				+ (this.name == null ? 0 : this.name.hashCode());
 		return result;
 	}
 
